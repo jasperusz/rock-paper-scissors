@@ -1,6 +1,7 @@
 let humanScore = 0;
 let computerScore = 0;
 let drawScore = 0;
+const maxPoints = 5;
 
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3);
@@ -32,32 +33,32 @@ function getHumanChoice(choice) {
 };
 
 function playRound(humanChoice, computerChoice) {
-    humanChoice = getHumanChoice();
     computerChoice = getComputerChoice();
     if (humanChoice === "rock" && computerChoice === "scissors") {
-        console.log("Você marcou um ponto!");
+        document.getElementById('consoleText').textContent = "You scored a point!";
         humanScore++;
     } else if (humanChoice === "paper" && computerChoice === "rock") {
-        console.log("Você marcou um ponto!");
+        document.getElementById('consoleText').textContent = "You scored a point!";
         humanScore++;
     } else if (humanChoice === "scissors" && computerChoice === "paper") {
-        console.log("Você marcou um ponto!");
+        document.getElementById('consoleText').textContent = "You scored a point!";
         humanScore++;
     } else if (humanChoice === "paper" && computerChoice === "scissors") {
-        console.log("O computador marcou um ponto!");
+        document.getElementById('consoleText').textContent = "The computer scored a point!";
         computerScore++;
     } else if (humanChoice === "scissors" && computerChoice === "rock") {
-        console.log("O computador marcou um ponto!");
+        document.getElementById('consoleText').textContent = "The computer scored a point!";
         computerScore++;
     } else if (humanChoice === "rock" && computerChoice === "paper") {
-        console.log("O computador marcou um ponto!");
+        document.getElementById('consoleText').textContent = "The computer scored a point!";
         computerScore++;
     } else if (humanChoice === computerChoice) {
-        console.log("It's a draw!")
+        document.getElementById('consoleText').textContent = "It's a draw!";
         drawScore++;
+        document.getElementById('drawScore').textContent = "DRAWS: "+ drawScore
         return "draw"
     };
-    console.log('Seus pontos:' + humanScore)
-    console.log('Pontos da maquina:' + computerScore)
-    console.log('Empates:' + drawScore)
+    document.getElementById('playerScore').textContent = "PLAYER: "+ humanScore
+    document.getElementById('computerScore').textContent = "COMPUTER: "+ computerScore
+
 };
