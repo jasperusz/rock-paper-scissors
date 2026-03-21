@@ -16,8 +16,7 @@ function getComputerChoice() {
     };
 };
 
-function getHumanChoice() {
-    let choice = prompt('Lets play, what do u choose? Rock, Paper or Scissors?').toLowerCase();
+function getHumanChoice(choice) {
     if (choice === 'rock') {
         console.log('You choose Rock.')
         return "rock"
@@ -58,4 +57,7 @@ function playRound(humanChoice, computerChoice) {
         drawScore++;
         return "draw"
     };
+    console.log('Seus pontos:' + humanScore)
+    console.log('Pontos da maquina:' + computerScore)
+    console.log('Empates:' + drawScore)
 };
