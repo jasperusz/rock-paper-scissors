@@ -17,13 +17,15 @@
             <p id="scoresTitle">SCORES:</p>
             <div class="resultados"><p id="playerScore">PLAYER: 0</p> <p id="computerScore">COMPUTER: 0</p> <p id="drawScore">DRAWS: 0</p></div>
             <div class="console">
-                <p id="consoleText">Good Luck!</p>
+                <p id="consoleHumanChoice"></p>
+                <p id="consoleComputerChoice"></p>
+                <p id="consoleText">FIRST TO FIVE POINTS WIN! GOOD LUCK!</p>
             </div>
             <div class="selection">
             <button class="choice" id="rockbutton" onclick="playRound('rock')">ROCK</button>
             <button class="choice" id="paperbutton" onclick="playRound('paper')">PAPER</button>
             <button class="choice" id="scissorsbutton" onclick="playRound('scissors')">SCISSORS</button>
-            <button class="choice" id="playagain" onclick="playRound()">PLAY</button>
+            <button class="choice" id="playagain" onclick="resetGame('play')">PLAY</button>
             </div>
         </div>
     </div>
