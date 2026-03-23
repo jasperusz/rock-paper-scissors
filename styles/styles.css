@@ -29,6 +29,7 @@ body{
 /* CONTAINER DO CENTRO */
 div.center-container{
     width: 40%;
+    min-width: 400px;
     height: 400px;
     display: flex;
     justify-self: center;
