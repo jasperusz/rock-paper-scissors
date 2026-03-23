@@ -2,6 +2,7 @@ let humanScore = 0;
 let computerScore = 0;
 let drawScore = 0;
 const maxPoints = 5;
+document.getElementById("playagain").style.display = "none";
 
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3);
@@ -33,6 +34,7 @@ function getHumanChoice(choice) {
 };
 
 function playRound(humanChoice, computerChoice) {
+    
     computerChoice = getComputerChoice();
     if (humanChoice === "rock" && computerChoice === "scissors") {
         document.getElementById('consoleText').textContent = "You scored a point!";
@@ -61,4 +63,25 @@ function playRound(humanChoice, computerChoice) {
     document.getElementById('playerScore').textContent = "PLAYER: "+ humanScore
     document.getElementById('computerScore').textContent = "COMPUTER: "+ computerScore
 
+    if (humanScore === maxPoints || computerScore === maxPoints || drawScore === maxPoints) {
+        document.getElementById('consoleText').textContent = "The Game is over, click on the button to play again!";
+        document.getElementById("rockbutton").style.display = "none";
+        document.getElementById("scissorsbutton").style.display = "none";
+        document.getElementById("paperbutton").style.display = "none";
+        document.getElementById("playagain").style.display = "block";
+        
+    }
 };
+
+function resetGame(buttonClick) {
+    if (buttonClick === 'play'){
+        humanScore = 0;
+        computerScore = 0;
+        drawScore = 0;
+        document.getElementById("rockbutton").style.display = "block";
+        document.getElementById("scissorsbutton").style.display = "block";
+        document.getElementById("paperbutton").style.display = "block";
+        document.getElementById("playagain").style.display = "none";
+    }
+
+}
