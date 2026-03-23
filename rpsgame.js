@@ -78,6 +78,10 @@ function resetGame(buttonClick) {
         humanScore = 0;
         computerScore = 0;
         drawScore = 0;
+        document.getElementById('playerScore').textContent = "PLAYER: "+ humanScore
+        document.getElementById('computerScore').textContent = "COMPUTER: "+ computerScore
+        document.getElementById('drawScore').textContent = "DRAWS: "+ drawScore
+        
         document.getElementById("rockbutton").style.display = "block";
         document.getElementById("scissorsbutton").style.display = "block";
         document.getElementById("paperbutton").style.display = "block";
